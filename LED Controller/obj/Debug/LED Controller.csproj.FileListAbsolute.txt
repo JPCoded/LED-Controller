@@ -1,0 +1,9 @@
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe.config
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.pdb
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.csprojResolveAssemblyReference.cache
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED_Controller.Properties.Resources.resources
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.csproj.GenerateResource.Cache
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.exe
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.pdb
+c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED_Controller.frmMain.resources
