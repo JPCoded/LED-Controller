@@ -96,7 +96,6 @@ namespace LED_Controller
         }
 
         public Color SelectedColor { get; set; }
-
         public Color HoverColor { get; set; }
     }
 }

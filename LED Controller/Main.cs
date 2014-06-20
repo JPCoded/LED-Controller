@@ -35,9 +35,9 @@ namespace LED_Controller
             rgbHBlue.iValue = cpcColors.HoverColor.B;
             pnlHoverColor.BackColor = cpcColors.HoverColor;
         }
+
         private void populatePorts()
         {
-
             //gets list of all connected ports
             string[] ports = SerialPort.GetPortNames();
             //remove previous entries so we don't get duplicate items
@@ -78,6 +78,23 @@ namespace LED_Controller
                 tbsStatus.Text = "Connected to port: " + clickedItem.Text;
             }
         }
+
+        private void ConvertToHex(char HS)
+        {
+            string hexValue = string.Empty;
+            if (HS == 'H')
+            {
+                hexValue = ColorTranslator.ToHtml(pnlHoverColor.BackColor);
+                htbHover.Text = hexValue.Replace("#", string.Empty);
+            }
+            else
+            {
+                hexValue = ColorTranslator.ToHtml(pnlSavedColor.BackColor);
+                htbSaved.Text = hexValue.Replace("#", string.Empty);
+            }
+
+        }
+
         #endregion
 
         #region Toolbar Clicks
@@ -111,7 +128,7 @@ namespace LED_Controller
 
         private void tsmiRefresh_Click(object sender, EventArgs e)
         {
-           populatePorts();
+            populatePorts();
         }
         #endregion
 
@@ -131,6 +148,7 @@ namespace LED_Controller
             }
         }
 
+        #region cpcColors
         private void cpcColors_ColorPicked(object sender, EventArgs e)
         {
             pnlSavedColor.BackColor = cpcColors.SelectedColor;
@@ -144,62 +162,93 @@ namespace LED_Controller
             ChangeColor();
         }
 
+        #endregion
+
         #region rgbNUD ValueChanged
         private void rgbHRed_ValueChanged(object sender, EventArgs e)
         {
             pnlHoverColor.BackColor = Color.FromArgb(rgbHRed.iValue, rgbHGreen.iValue, rgbHBlue.iValue);
             pnlHRed.BackColor = HovCol(red: rgbHRed.iValue);
+            ConvertToHex('H');
         }
 
         private void rgbHGreen_ValueChanged(object sender, EventArgs e)
         {
             pnlHoverColor.BackColor = Color.FromArgb(rgbHRed.iValue, rgbHGreen.iValue, rgbHBlue.iValue);
             pnlHGreen.BackColor = HovCol(green: rgbHGreen.iValue);
+            ConvertToHex('H');
         }
 
         private void rgbHBlue_ValueChanged(object sender, EventArgs e)
         {
             pnlHoverColor.BackColor = Color.FromArgb(rgbHRed.iValue, rgbHGreen.iValue, rgbHBlue.iValue);
             pnlHBlue.BackColor = HovCol(blue: rgbHBlue.iValue);
+            ConvertToHex('H');
         }
 
         private void rgbSRed_ValueChanged(object sender, EventArgs e)
         {
             pnlSavedColor.BackColor = Color.FromArgb(rgbSRed.iValue, rgbSGreen.iValue, rgbSBlue.iValue);
             pnlSRed.BackColor = HovCol(red: rgbSRed.iValue);
+            ConvertToHex('S');
         }
 
         private void rgbSGreen_ValueChanged(object sender, EventArgs e)
         {
             pnlSavedColor.BackColor = Color.FromArgb(rgbSRed.iValue, rgbSGreen.iValue, rgbSBlue.iValue);
             pnlSGreen.BackColor = HovCol(green: rgbSGreen.iValue);
+            ConvertToHex('S');
         }
 
         private void rgbSBlue_ValueChanged(object sender, EventArgs e)
         {
             pnlSavedColor.BackColor = Color.FromArgb(rgbSRed.iValue, rgbSGreen.iValue, rgbSBlue.iValue);
             pnlSBlue.BackColor = HovCol(blue: rgbSBlue.iValue);
+            ConvertToHex('S');
         }
         #endregion
 
         private void btnSet_Click(object sender, EventArgs e)
         {
-                       
+
             byte[] colorBytes = { rgbSRed.getByte, rgbSGreen.getByte, rgbSBlue.getByte, 0x0A };
-            for (int i = 0; i < colorBytes.Length; i++)
-            {
-                if (colorBytes[i] == 0x0A) colorBytes[i] = 0x0B;
-            }
 
             if (ArduinoPort.IsOpen)
             {
-                ArduinoPort.Write(colorBytes, 0, 3);
+                try
+                {
+                    ArduinoPort.Write(colorBytes, 0, 3);
+                }
+                catch (System.IO.IOException)
+                {
+                    MessageBox.Show("Failed to communicate with arduino. Make sure you have port selected.");
+                }
             }
             else
             {
                 MessageBox.Show("No Port is selected. Please select a port from Settings->Ports menu.");
             }
-                        
+
+        }
+
+        private void htbHover_TextChanged(object sender, EventArgs e)
+        {
+            if (htbHover.isLength)
+            {
+                rgbHRed.iValue = htbHover.Red;
+                rgbHGreen.iValue = htbHover.Green;
+                rgbHBlue.iValue = htbHover.Blue;
+            }
+        }
+
+        private void htbSaved_TextChanged(object sender, EventArgs e)
+        {
+            if (htbSaved.isLength)
+            {
+                rgbSRed.iValue = htbSaved.Red;
+                rgbSGreen.iValue = htbSaved.Green;
+                rgbSBlue.iValue = htbSaved.Blue;
+            }
         }
 
     }

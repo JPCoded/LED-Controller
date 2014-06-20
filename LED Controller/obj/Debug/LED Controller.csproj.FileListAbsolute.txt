@@ -7,3 +7,6 @@ c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Con
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.exe
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.pdb
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED_Controller.frmMain.resources
+C:\Users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.XML
+C:\Users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe.CodeAnalysisLog.xml
+C:\Users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe.lastcodeanalysissucceeded
