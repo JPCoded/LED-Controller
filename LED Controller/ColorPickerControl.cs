@@ -95,7 +95,12 @@ namespace LED_Controller
             e.Graphics.DrawImageUnscaled(_canvas, Point.Empty);
         }
 
+        [DefaultValue(typeof(Color), "0, 0, 0")]
         public Color SelectedColor { get; set; }
+
+        /// <summary>
+        /// Hover color value
+        /// </summary>
         public Color HoverColor { get; set; }
     }
 }

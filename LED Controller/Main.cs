@@ -21,6 +21,11 @@ namespace LED_Controller
             populatePorts();
         }
 
+        private void frmMain_Closing(object sender, FormClosingEventArgs e)
+        {
+            if (ArduinoPort.IsOpen) { ArduinoPort.Close(); }
+        }
+
         #region Custom Functions
         public Color HovCol(int red = 0, int green = 0, int blue = 0)
         {
@@ -118,7 +123,8 @@ namespace LED_Controller
 
         private void tsmiAbout_Click(object sender, EventArgs e)
         {
-
+            using (AboutForm af = new AboutForm())
+            { af.ShowDialog(this); }
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
@@ -131,22 +137,6 @@ namespace LED_Controller
             populatePorts();
         }
         #endregion
-
-        private void btnAdvance_Click(object sender, EventArgs e)
-        {
-            if (grpHover.Visible)
-            {
-                grpSaved.Visible = false;
-                grpHover.Visible = false;
-                btnAdvance.Text = "More ->";
-            }
-            else
-            {
-                grpSaved.Visible = true;
-                grpHover.Visible = true;
-                btnAdvance.Text = "<- Less";
-            }
-        }
 
         #region cpcColors
         private void cpcColors_ColorPicked(object sender, EventArgs e)
@@ -208,6 +198,7 @@ namespace LED_Controller
         }
         #endregion
 
+        #region Buttons
         private void btnSet_Click(object sender, EventArgs e)
         {
 
@@ -230,6 +221,31 @@ namespace LED_Controller
             }
 
         }
+       
+        private void btnAdvance_Click(object sender, EventArgs e)
+        {
+            if (grpHover.Visible)
+            {
+                grpSaved.Visible = false;
+                grpHover.Visible = false;
+                btnAdvance.Text = "More ->";
+            }
+            else
+            {
+                grpSaved.Visible = true;
+                grpHover.Visible = true;
+                btnAdvance.Text = "<- Less";
+            }
+        }
+
+        private void btnHovSave_Click(object sender, EventArgs e)
+        {
+            rgbSRed.Value = rgbHRed.Value;
+            rgbSGreen.Value = rgbHGreen.Value;
+            rgbSBlue.Value = rgbHBlue.Value;
+        }
+
+        #endregion
 
         private void htbHover_TextChanged(object sender, EventArgs e)
         {
@@ -250,6 +266,5 @@ namespace LED_Controller
                 rgbSBlue.iValue = htbSaved.Blue;
             }
         }
-
     }
 }
