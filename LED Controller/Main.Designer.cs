@@ -43,25 +43,17 @@
             this.grpHover = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnHovSave = new System.Windows.Forms.Button();
-            this.htbHover = new LED_Controller.HexTextBox();
             this.pnlHBlue = new System.Windows.Forms.Panel();
             this.pnlHGreen = new System.Windows.Forms.Panel();
             this.pnlHRed = new System.Windows.Forms.Panel();
-            this.rgbHBlue = new LED_Controller.rgbNUD();
-            this.rgbHGreen = new LED_Controller.rgbNUD();
-            this.rgbHRed = new LED_Controller.rgbNUD();
             this.lblHBlue = new System.Windows.Forms.Label();
             this.lblHGreen = new System.Windows.Forms.Label();
             this.lblHRed = new System.Windows.Forms.Label();
             this.grpSaved = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.htbSaved = new LED_Controller.HexTextBox();
             this.pnlSBlue = new System.Windows.Forms.Panel();
             this.pnlSGreen = new System.Windows.Forms.Panel();
             this.pnlSRed = new System.Windows.Forms.Panel();
-            this.rgbSBlue = new LED_Controller.rgbNUD();
-            this.rgbSGreen = new LED_Controller.rgbNUD();
-            this.rgbSRed = new LED_Controller.rgbNUD();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,16 +66,24 @@
             this.ArduinoPort = new System.IO.Ports.SerialPort(this.components);
             this.tpTips = new System.Windows.Forms.ToolTip(this.components);
             this.cpcColors = new LED_Controller.ColorPickerControl();
+            this.htbSaved = new LED_Controller.HexTextBox();
+            this.rgbSBlue = new LED_Controller.rgbNUD();
+            this.rgbSGreen = new LED_Controller.rgbNUD();
+            this.rgbSRed = new LED_Controller.rgbNUD();
+            this.htbHover = new LED_Controller.HexTextBox();
+            this.rgbHBlue = new LED_Controller.rgbNUD();
+            this.rgbHGreen = new LED_Controller.rgbNUD();
+            this.rgbHRed = new LED_Controller.rgbNUD();
             this.ssMenu.SuspendLayout();
             this.ssStatus.SuspendLayout();
             this.grpHover.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rgbHBlue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgbHGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgbHRed)).BeginInit();
             this.grpSaved.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgbSBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgbSGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgbSRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgbHBlue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgbHGreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgbHRed)).BeginInit();
             this.SuspendLayout();
             // 
             // ssMenu
@@ -111,28 +111,30 @@
             // tsmiSave
             // 
             this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(107, 22);
-            this.tsmiSave.Text = "Save";
+            this.tsmiSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.tsmiSave.Size = new System.Drawing.Size(146, 22);
+            this.tsmiSave.Text = "&Save";
             this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
             // 
             // tsmiOpen
             // 
             this.tsmiOpen.Name = "tsmiOpen";
-            this.tsmiOpen.Size = new System.Drawing.Size(107, 22);
-            this.tsmiOpen.Text = "Open";
+            this.tsmiOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.tsmiOpen.Size = new System.Drawing.Size(146, 22);
+            this.tsmiOpen.Text = "&Open";
             this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
             // 
             // tsmiAbout
             // 
             this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(107, 22);
+            this.tsmiAbout.Size = new System.Drawing.Size(146, 22);
             this.tsmiAbout.Text = "About";
             this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(107, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(146, 22);
             this.tsmiExit.Text = "Exit";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
@@ -163,7 +165,7 @@
             this.ssStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tbsStatus});
             this.ssStatus.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.ssStatus.Location = new System.Drawing.Point(0, 324);
+            this.ssStatus.Location = new System.Drawing.Point(0, 307);
             this.ssStatus.Name = "ssStatus";
             this.ssStatus.Size = new System.Drawing.Size(384, 20);
             this.ssStatus.TabIndex = 1;
@@ -217,16 +219,6 @@
             this.btnHovSave.UseVisualStyleBackColor = true;
             this.btnHovSave.Click += new System.EventHandler(this.btnHovSave_Click);
             // 
-            // htbHover
-            // 
-            this.htbHover.Location = new System.Drawing.Point(41, 98);
-            this.htbHover.MaxLength = 6;
-            this.htbHover.Name = "htbHover";
-            this.htbHover.Size = new System.Drawing.Size(65, 20);
-            this.htbHover.TabIndex = 8;
-            this.htbHover.Text = "";
-            this.htbHover.TextChanged += new System.EventHandler(this.htbHover_TextChanged);
-            // 
             // pnlHBlue
             // 
             this.pnlHBlue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -234,6 +226,7 @@
             this.pnlHBlue.Name = "pnlHBlue";
             this.pnlHBlue.Size = new System.Drawing.Size(34, 20);
             this.pnlHBlue.TabIndex = 7;
+            this.tpTips.SetToolTip(this.pnlHBlue, "Blue hover color");
             // 
             // pnlHGreen
             // 
@@ -242,6 +235,7 @@
             this.pnlHGreen.Name = "pnlHGreen";
             this.pnlHGreen.Size = new System.Drawing.Size(34, 20);
             this.pnlHGreen.TabIndex = 7;
+            this.tpTips.SetToolTip(this.pnlHGreen, "Green hover color");
             // 
             // pnlHRed
             // 
@@ -250,48 +244,7 @@
             this.pnlHRed.Name = "pnlHRed";
             this.pnlHRed.Size = new System.Drawing.Size(34, 20);
             this.pnlHRed.TabIndex = 6;
-            // 
-            // rgbHBlue
-            // 
-            this.rgbHBlue.iValue = 0;
-            this.rgbHBlue.Location = new System.Drawing.Point(41, 72);
-            this.rgbHBlue.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.rgbHBlue.Name = "rgbHBlue";
-            this.rgbHBlue.Size = new System.Drawing.Size(41, 20);
-            this.rgbHBlue.TabIndex = 5;
-            this.rgbHBlue.ValueChanged += new System.EventHandler(this.rgbHBlue_ValueChanged);
-            // 
-            // rgbHGreen
-            // 
-            this.rgbHGreen.iValue = 0;
-            this.rgbHGreen.Location = new System.Drawing.Point(41, 46);
-            this.rgbHGreen.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.rgbHGreen.Name = "rgbHGreen";
-            this.rgbHGreen.Size = new System.Drawing.Size(40, 20);
-            this.rgbHGreen.TabIndex = 4;
-            this.rgbHGreen.ValueChanged += new System.EventHandler(this.rgbHGreen_ValueChanged);
-            // 
-            // rgbHRed
-            // 
-            this.rgbHRed.iValue = 0;
-            this.rgbHRed.Location = new System.Drawing.Point(41, 19);
-            this.rgbHRed.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.rgbHRed.Name = "rgbHRed";
-            this.rgbHRed.Size = new System.Drawing.Size(40, 20);
-            this.rgbHRed.TabIndex = 3;
-            this.rgbHRed.ValueChanged += new System.EventHandler(this.rgbHRed_ValueChanged);
+            this.tpTips.SetToolTip(this.pnlHRed, "Red hover color");
             // 
             // lblHBlue
             // 
@@ -350,16 +303,6 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "HEX";
             // 
-            // htbSaved
-            // 
-            this.htbSaved.Location = new System.Drawing.Point(41, 98);
-            this.htbSaved.MaxLength = 6;
-            this.htbSaved.Name = "htbSaved";
-            this.htbSaved.Size = new System.Drawing.Size(65, 20);
-            this.htbSaved.TabIndex = 17;
-            this.htbSaved.Text = "";
-            this.htbSaved.TextChanged += new System.EventHandler(this.htbSaved_TextChanged);
-            // 
             // pnlSBlue
             // 
             this.pnlSBlue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -367,6 +310,7 @@
             this.pnlSBlue.Name = "pnlSBlue";
             this.pnlSBlue.Size = new System.Drawing.Size(34, 20);
             this.pnlSBlue.TabIndex = 15;
+            this.tpTips.SetToolTip(this.pnlSBlue, "Blue saved color");
             // 
             // pnlSGreen
             // 
@@ -375,6 +319,7 @@
             this.pnlSGreen.Name = "pnlSGreen";
             this.pnlSGreen.Size = new System.Drawing.Size(34, 20);
             this.pnlSGreen.TabIndex = 16;
+            this.tpTips.SetToolTip(this.pnlSGreen, "Green saved color");
             // 
             // pnlSRed
             // 
@@ -383,48 +328,7 @@
             this.pnlSRed.Name = "pnlSRed";
             this.pnlSRed.Size = new System.Drawing.Size(34, 20);
             this.pnlSRed.TabIndex = 14;
-            // 
-            // rgbSBlue
-            // 
-            this.rgbSBlue.iValue = 0;
-            this.rgbSBlue.Location = new System.Drawing.Point(41, 72);
-            this.rgbSBlue.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.rgbSBlue.Name = "rgbSBlue";
-            this.rgbSBlue.Size = new System.Drawing.Size(41, 20);
-            this.rgbSBlue.TabIndex = 13;
-            this.rgbSBlue.ValueChanged += new System.EventHandler(this.rgbSBlue_ValueChanged);
-            // 
-            // rgbSGreen
-            // 
-            this.rgbSGreen.iValue = 0;
-            this.rgbSGreen.Location = new System.Drawing.Point(41, 46);
-            this.rgbSGreen.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.rgbSGreen.Name = "rgbSGreen";
-            this.rgbSGreen.Size = new System.Drawing.Size(40, 20);
-            this.rgbSGreen.TabIndex = 12;
-            this.rgbSGreen.ValueChanged += new System.EventHandler(this.rgbSGreen_ValueChanged);
-            // 
-            // rgbSRed
-            // 
-            this.rgbSRed.iValue = 0;
-            this.rgbSRed.Location = new System.Drawing.Point(41, 19);
-            this.rgbSRed.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.rgbSRed.Name = "rgbSRed";
-            this.rgbSRed.Size = new System.Drawing.Size(40, 20);
-            this.rgbSRed.TabIndex = 11;
-            this.rgbSRed.ValueChanged += new System.EventHandler(this.rgbSRed_ValueChanged);
+            this.tpTips.SetToolTip(this.pnlSRed, "Red saved color");
             // 
             // label3
             // 
@@ -456,7 +360,7 @@
             // pnlSavedColor
             // 
             this.pnlSavedColor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlSavedColor.Location = new System.Drawing.Point(6, 194);
+            this.pnlSavedColor.Location = new System.Drawing.Point(6, 171);
             this.pnlSavedColor.Name = "pnlSavedColor";
             this.pnlSavedColor.Size = new System.Drawing.Size(102, 96);
             this.pnlSavedColor.TabIndex = 5;
@@ -465,7 +369,7 @@
             // pnlHoverColor
             // 
             this.pnlHoverColor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlHoverColor.Location = new System.Drawing.Point(134, 197);
+            this.pnlHoverColor.Location = new System.Drawing.Point(134, 174);
             this.pnlHoverColor.Name = "pnlHoverColor";
             this.pnlHoverColor.Size = new System.Drawing.Size(107, 96);
             this.pnlHoverColor.TabIndex = 6;
@@ -474,7 +378,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 178);
+            this.label1.Location = new System.Drawing.Point(6, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 7;
@@ -483,7 +387,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 181);
+            this.label2.Location = new System.Drawing.Point(134, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 8;
@@ -491,7 +395,7 @@
             // 
             // btnAdvance
             // 
-            this.btnAdvance.Location = new System.Drawing.Point(186, 298);
+            this.btnAdvance.Location = new System.Drawing.Point(186, 275);
             this.btnAdvance.Name = "btnAdvance";
             this.btnAdvance.Size = new System.Drawing.Size(54, 23);
             this.btnAdvance.TabIndex = 9;
@@ -502,7 +406,7 @@
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(6, 298);
+            this.btnSet.Location = new System.Drawing.Point(6, 275);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(75, 23);
             this.btnSet.TabIndex = 10;
@@ -522,11 +426,121 @@
             this.cpcColors.Location = new System.Drawing.Point(9, 27);
             this.cpcColors.Name = "cpcColors";
             this.cpcColors.SelectedColor = System.Drawing.Color.Empty;
-            this.cpcColors.Size = new System.Drawing.Size(231, 144);
+            this.cpcColors.Size = new System.Drawing.Size(231, 122);
             this.cpcColors.TabIndex = 4;
             this.cpcColors.Text = "colorPickerControl1";
             this.cpcColors.ColorPicked += new System.EventHandler(this.cpcColors_ColorPicked);
             this.cpcColors.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cpcColors_MouseMove);
+            // 
+            // htbSaved
+            // 
+            this.htbSaved.Location = new System.Drawing.Point(41, 98);
+            this.htbSaved.MaxLength = 6;
+            this.htbSaved.Name = "htbSaved";
+            this.htbSaved.Size = new System.Drawing.Size(65, 20);
+            this.htbSaved.TabIndex = 17;
+            this.htbSaved.Text = "";
+            this.htbSaved.TextChanged += new System.EventHandler(this.htbSaved_TextChanged);
+            // 
+            // rgbSBlue
+            // 
+            this.rgbSBlue.iValue = 0;
+            this.rgbSBlue.Location = new System.Drawing.Point(41, 72);
+            this.rgbSBlue.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.rgbSBlue.Name = "rgbSBlue";
+            this.rgbSBlue.Size = new System.Drawing.Size(41, 20);
+            this.rgbSBlue.TabIndex = 13;
+            this.tpTips.SetToolTip(this.rgbSBlue, "int value for Blue");
+            this.rgbSBlue.ValueChanged += new System.EventHandler(this.rgbSBlue_ValueChanged);
+            // 
+            // rgbSGreen
+            // 
+            this.rgbSGreen.iValue = 0;
+            this.rgbSGreen.Location = new System.Drawing.Point(41, 46);
+            this.rgbSGreen.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.rgbSGreen.Name = "rgbSGreen";
+            this.rgbSGreen.Size = new System.Drawing.Size(40, 20);
+            this.rgbSGreen.TabIndex = 12;
+            this.tpTips.SetToolTip(this.rgbSGreen, "int value for Green");
+            this.rgbSGreen.ValueChanged += new System.EventHandler(this.rgbSGreen_ValueChanged);
+            // 
+            // rgbSRed
+            // 
+            this.rgbSRed.iValue = 0;
+            this.rgbSRed.Location = new System.Drawing.Point(41, 19);
+            this.rgbSRed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.rgbSRed.Name = "rgbSRed";
+            this.rgbSRed.Size = new System.Drawing.Size(40, 20);
+            this.rgbSRed.TabIndex = 11;
+            this.tpTips.SetToolTip(this.rgbSRed, "int value for Red");
+            this.rgbSRed.ValueChanged += new System.EventHandler(this.rgbSRed_ValueChanged);
+            // 
+            // htbHover
+            // 
+            this.htbHover.Location = new System.Drawing.Point(41, 98);
+            this.htbHover.MaxLength = 6;
+            this.htbHover.Name = "htbHover";
+            this.htbHover.Size = new System.Drawing.Size(65, 20);
+            this.htbHover.TabIndex = 8;
+            this.htbHover.Text = "";
+            this.htbHover.TextChanged += new System.EventHandler(this.htbHover_TextChanged);
+            // 
+            // rgbHBlue
+            // 
+            this.rgbHBlue.iValue = 0;
+            this.rgbHBlue.Location = new System.Drawing.Point(41, 72);
+            this.rgbHBlue.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.rgbHBlue.Name = "rgbHBlue";
+            this.rgbHBlue.Size = new System.Drawing.Size(41, 20);
+            this.rgbHBlue.TabIndex = 5;
+            this.tpTips.SetToolTip(this.rgbHBlue, "int value for Blue");
+            this.rgbHBlue.ValueChanged += new System.EventHandler(this.rgbHBlue_ValueChanged);
+            // 
+            // rgbHGreen
+            // 
+            this.rgbHGreen.iValue = 0;
+            this.rgbHGreen.Location = new System.Drawing.Point(41, 46);
+            this.rgbHGreen.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.rgbHGreen.Name = "rgbHGreen";
+            this.rgbHGreen.Size = new System.Drawing.Size(40, 20);
+            this.rgbHGreen.TabIndex = 4;
+            this.tpTips.SetToolTip(this.rgbHGreen, "int value for Green");
+            this.rgbHGreen.ValueChanged += new System.EventHandler(this.rgbHGreen_ValueChanged);
+            // 
+            // rgbHRed
+            // 
+            this.rgbHRed.iValue = 0;
+            this.rgbHRed.Location = new System.Drawing.Point(41, 19);
+            this.rgbHRed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.rgbHRed.Name = "rgbHRed";
+            this.rgbHRed.Size = new System.Drawing.Size(40, 20);
+            this.rgbHRed.TabIndex = 3;
+            this.tpTips.SetToolTip(this.rgbHRed, "int value for Red");
+            this.rgbHRed.ValueChanged += new System.EventHandler(this.rgbHRed_ValueChanged);
             // 
             // frmMain
             // 
@@ -534,7 +548,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(384, 344);
+            this.ClientSize = new System.Drawing.Size(384, 327);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.btnAdvance);
             this.Controls.Add(this.label2);
@@ -549,7 +563,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.ssMenu;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(265, 382);
+            this.MinimumSize = new System.Drawing.Size(265, 365);
             this.Name = "frmMain";
             this.ShowIcon = false;
             this.Text = "LED Controller";
@@ -560,14 +574,14 @@
             this.ssStatus.PerformLayout();
             this.grpHover.ResumeLayout(false);
             this.grpHover.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rgbHBlue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgbHGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgbHRed)).EndInit();
             this.grpSaved.ResumeLayout(false);
             this.grpSaved.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgbSBlue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgbSGreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgbSRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgbHBlue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgbHGreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgbHRed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

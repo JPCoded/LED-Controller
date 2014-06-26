@@ -1,7 +1,6 @@
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe.config
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.pdb
-c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.csprojResolveAssemblyReference.cache
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED_Controller.Properties.Resources.resources
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.csproj.GenerateResource.Cache
 c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.exe
@@ -10,3 +9,4 @@ c:\users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Con
 C:\Users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe.CodeAnalysisLog.xml
 C:\Users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\bin\Debug\LED Controller.exe.lastcodeanalysissucceeded
 C:\Users\cwarlord87\Documents\Visual Studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED_Controller.AboutForm.resources
+C:\Users\cwarlord87\documents\visual studio 2013\Projects\LED Controller\LED Controller\obj\Debug\LED Controller.csprojResolveAssemblyReference.cache

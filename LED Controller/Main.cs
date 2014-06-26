@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics.Contracts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
@@ -30,15 +31,6 @@ namespace LED_Controller
         public Color HovCol(int red = 0, int green = 0, int blue = 0)
         {
             return Color.FromArgb(red, green, blue);
-        }
-
-        private void ChangeColor()
-        {
-
-            rgbHRed.iValue = cpcColors.HoverColor.R;
-            rgbHGreen.iValue = cpcColors.HoverColor.G;
-            rgbHBlue.iValue = cpcColors.HoverColor.B;
-            pnlHoverColor.BackColor = cpcColors.HoverColor;
         }
 
         private void populatePorts()
@@ -149,7 +141,10 @@ namespace LED_Controller
 
         private void cpcColors_MouseMove(object sender, MouseEventArgs e)
         {
-            ChangeColor();
+            rgbHRed.iValue = cpcColors.HoverColor.R;
+            rgbHGreen.iValue = cpcColors.HoverColor.G;
+            rgbHBlue.iValue = cpcColors.HoverColor.B;
+            pnlHoverColor.BackColor = cpcColors.HoverColor;
         }
 
         #endregion
@@ -201,9 +196,7 @@ namespace LED_Controller
         #region Buttons
         private void btnSet_Click(object sender, EventArgs e)
         {
-
             byte[] colorBytes = { rgbSRed.getByte, rgbSGreen.getByte, rgbSBlue.getByte, 0x0A };
-
             if (ArduinoPort.IsOpen)
             {
                 try
@@ -219,9 +212,8 @@ namespace LED_Controller
             {
                 MessageBox.Show("No Port is selected. Please select a port from Settings->Ports menu.");
             }
-
         }
-       
+
         private void btnAdvance_Click(object sender, EventArgs e)
         {
             if (grpHover.Visible)
